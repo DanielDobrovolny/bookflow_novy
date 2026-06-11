@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <title>Knihovna Bookflow</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background-color: #f4f4f9; }
+        h1 { color: #333; }
+        .kniha-card { background: white; padding: 20px; margin-bottom: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; background: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 5px; margin-top: 10px; }
+        .btn:hover { background: #0056b3; }
+    </style>
+</head>
+<body>
+
+    <h1>Katalog knihovny Bookflow</h1>
+    <p>Vítejte v uživatelském rozhraní. Zde je seznam dostupných knih:</p>
+
+    {% for kniha in knihy %}
+        <div class="kniha-card">
+            <h2>{{ kniha.nazev }}</h2>
+            <p><strong>Autor:</strong> {{ kniha.autor }}</p>
+            <p>{{ kniha.popis }}</p>
+            <a href="/admin/core/vypujcky/add/" class="btn">Zapůjčit knihu</a>
+        </div>
+    {% empty %}
+        <p>V katalogu momentálně nejsou žádné knihy.</p>
+    {% endfor %}
+
+</body>
+</html>
