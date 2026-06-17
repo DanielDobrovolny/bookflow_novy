@@ -15,4 +15,4 @@ class KnihyAdmin(admin.ModelAdmin):
 @admin.register(Vypujcky)
 class VypujckyAdmin(admin.ModelAdmin):
     # Odsud jsme smazali 'datum_vypujceni' a 'datum_vraceni', protože v modelech nejsou!
-    list_display = ('id', 'uzivatel', 'kniha', 'datum_vypujcky')
+    list_display = ('id', 'uzivatel', 'kniha')
