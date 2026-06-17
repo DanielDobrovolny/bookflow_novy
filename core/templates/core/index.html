@@ -21,7 +21,7 @@
             <h2>{{ kniha.nazev }}</h2>
             <p><strong>Autor:</strong> {{ kniha.autor }}</p>
             <p>{{ kniha.popis }}</p>
-            <a href="/admin/core/vypujcky/add/" class="btn">Zapůjčit knihu</a>
+            <a href="{% url 'detail_knihy' kniha.id %}" class="btn">Zapůjčit knihu</a>
         </div>
     {% empty %}
         <p>V katalogu momentálně nejsou žádné knihy.</p>
